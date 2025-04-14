@@ -1,0 +1,60 @@
+.history {
+  margin-top: 4em;
+}
+.history p {
+  font-size: 2em;
+  font-variant: small-caps;
+}
+.historyScroll {
+  height: 800px;
+  overflow-y: scroll;
+}
+.timeline {
+  background: var(--primary-color);
+  margin: 20px auto;
+  padding: 20px;
+}
+
+.outer {
+  border-left: 2px solid #333;
+}
+
+.card {
+  position: relative;
+  margin: 0 0 20px 20px;
+  padding: 10px;
+  background: #f4f0ec;
+  color: black;
+  border-radius: 8px;
+  min-width: 450px;
+  max-width: 600px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  color: orangered;
+  position: relative;
+}
+
+.title::before {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: white;
+  border-radius: 999px;
+  left: -40px;
+  border: 3px solid orangered;
+}
+
+.hideShowMore {
+  display: none;
+}
+.showMore {
+  display: block;
+}

@@ -1,0 +1,51 @@
+@font-face {
+  font-family: 'Carattere';
+  src: url('../../fonts/Carattere/Carattere-Regular.ttf');
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1050;
+}
+header .navbar-toggler {
+  left: 0.5rem;
+  position: absolute;
+}
+#logo button {
+  display: none;
+}
+#logo h1 {
+  padding-top: 1rem;
+}
+.name {
+  font-family: Carattere, Roboto, serif;
+  font-size: 3.5em;
+  padding-left: 2rem;
+}
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
+}
+.grid-bottom {
+  justify-self: center;
+  align-self: end;
+}
+.nav-center {
+  align-self: center;
+}
+.navigation {
+  margin: 0;
+  list-style: none;
+}
+.navigation a {
+  text-decoration: none;
+  //display: block;
+  padding: 0.5em;
+}
+.navigation a:hover {
+  text-decoration: underline;
+}

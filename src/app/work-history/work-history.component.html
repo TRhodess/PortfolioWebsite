@@ -1,0 +1,26 @@
+<div class="row justify-content-center history">
+  <div class="col-2">
+    <p>Work History</p>
+  </div>
+</div>
+<div class="row justify-content-center historyScroll">
+  <div class="col-6">
+    <div class="timeline">
+      <div class="outer">
+        @for (item of whData.workhistory; track item; let indx = $index;) {
+          <div class="card">
+            <div class="info">
+              <h3 class="title">{{item.startDate}} {{item.position}}</h3>
+              <p>{{item.summary}}</p>
+              <hr/>
+              <button #smbtn id="{{'sm'+indx}}" type="button" class="btn" (click)="toggleShowMore( 'sm' + indx )">{{showText}}</button>
+              <div class="{{showClass}}">
+                <p>{{item.jobDescription}}</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</div>

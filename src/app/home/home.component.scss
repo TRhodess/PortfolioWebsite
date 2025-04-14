@@ -1,0 +1,27 @@
+.homeArea {
+  height: 400px;
+  background-image: url("/office2.png");
+  margin: 0 0 5rem 0;
+}
+.backgroundCover {
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.aboutMeCard {
+  height:300px;
+  width:70%;
+  margin-top:150px;
+  background-color:white;
+  box-shadow: darkgreen 2px 2px 5px;
+}
+.aboutMeCard h2 {
+  font-family: Garamond, "Times New Roman", serif;
+  margin: 5px;
+}
+.aboutMeCard p {
+  margin-top: 1rem;
+  font-size: 1.25rem;
+  font-variant: small-caps;
+}
