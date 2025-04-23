@@ -16,6 +16,7 @@ export class WorkHistoryComponent implements OnInit {
   showText: string = "Show more";
 
   showMoreButtons = viewChildren("smbtn", { read: ElementRef });
+  moreWorkHistory = viewChildren("moreHistory", { read: ElementRef });
 
   ngOnInit() {
     const subscription = this.httpClient.get('/workhistory.json')
@@ -25,8 +26,6 @@ export class WorkHistoryComponent implements OnInit {
         }
       });
 
-    // comment change
-    // change 2
     this.destroyref.onDestroy(() => {
       subscription.unsubscribe();
     });
@@ -34,7 +33,20 @@ export class WorkHistoryComponent implements OnInit {
 
   toggleShowMore(buttonId: string)
   {
-    const wrkbtn = this.showMoreButtons().filter( btn => btn.nativeElement.id === buttonId);
-    wrkbtn[0].nativeElement.textContent = "Show less";
+    let buttonIdNumber = buttonId.substring(1);
+    let btnState: string = "";
+    let wrkbtn = this.showMoreButtons().filter( btn => btn.nativeElement.id === 'sm'+buttonIdNumber);
+    let detailHistory = this.moreWorkHistory().filter( section => section.nativeElement.id === 'mh'+buttonIdNumber )
+
+    btnState = wrkbtn[0].nativeElement.dataset.state;
+    if (btnState == 'less') {
+      wrkbtn[0].nativeElement.textContent = 'Show less';
+      wrkbtn[0].nativeElement.dataset.state = 'more';
+      detailHistory[0].nativeElement.classList.value = 'showMore';
+    } else {
+      wrkbtn[0].nativeElement.textContent = 'Show more';
+      wrkbtn[0].nativeElement.dataset.state = 'less';
+      detailHistory[0].nativeElement.classList.value = 'hideShowMore';
+    }
   }
 }

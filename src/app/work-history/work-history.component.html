@@ -13,8 +13,9 @@
               <h3 class="title">{{item.startDate}} {{item.position}}</h3>
               <p>{{item.summary}}</p>
               <hr/>
-              <button #smbtn id="{{'sm'+indx}}" type="button" class="btn" (click)="toggleShowMore( 'sm' + indx )">{{showText}}</button>
-              <div class="{{showClass}}">
+              <button #smbtn id="{{'sm'+indx}}" type="button" class="btn" data-state="less"
+                      (click)="toggleShowMore( 'a'+indx )">{{showText}}</button>
+              <div class="{{showClass}}" id="{{'mh'+indx}}" #moreHistory>
                 <p>{{item.jobDescription}}</p>
               </div>
             </div>
