@@ -3,12 +3,18 @@
   src: url('../../fonts/Carattere/Carattere-Regular.ttf');
 }
 
+.full-height {
+  height: 100% !important;
+}
 header {
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   z-index: 1050;
+  width: 15%;
+  height: 100%;
+  background-color: white;
 }
 header .navbar-toggler {
   left: 0.5rem;
@@ -48,4 +54,25 @@ header .navbar-toggler {
 }
 .navigation a:hover {
   text-decoration: underline;
+}
+
+@media only screen and (max-width: 768px) {
+  #logo button { display: block; margin-top: 1em; margin-left: 1em; }
+  header {
+    height: 75px;
+    width: 100%;
+    background-color: white;
+  }
+  header h1 { justify-self: center;}
+  .container-grid { grid-template-columns: 1fr; grid-template-rows: 1fr; }
+
+  .nav-center { display: none; }
+  .nav-center-open {
+    display: block;
+    background-color: white;
+    box-shadow:10px 10px 5px darkslategrey;
+    border-top:1px solid darkslategrey;
+    margin-top:-50px;
+    width:200px;}
+  .grid-bottom { display: none; }
 }

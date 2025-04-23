@@ -1,17 +1,18 @@
-<header class="h-100" style="width:20%;">
-  <div class="container-fluid h-100">
-    <div class="row h-100">
+<header>
+  <div class="container-fluid full-height">
+    <div class="row full-height">
       <div class="container-grid">
         <div id="logo" class="col">
-          <button class="navbar-toggler d-x1-none" type="button" data-toggle="collaspe" data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="true" aria-label="Toggle navigation">
+          <button class="navbar-toggler d-x1-none" type="button" [attr.data-toggle]="state"
+                  data-target="#navbarTop" aria-controls="navbarTop" aria-expanded="true" aria-label="Toggle navigation"
+          (click)="showMenu()" #menuButton >
             <span>
-              <mat-icon aria-hidden="false" aria-label="open/close menu">menu</mat-icon>
+              <mat-icon aria-hidden="true" aria-label="open/close menu">menu</mat-icon>
             </span>
           </button>
-          <div><h1 class="name">Rhodes</h1>
-          </div>
+          <h1 class="name">Rhodes</h1>
         </div>
-        <div class="cols-12 nav-center">
+        <div class="{{ classList }}" #menu >
           <ol class="navigation">
             <li>
               <span>
@@ -38,7 +39,7 @@
             </li>
             -->
             <li>
-              <a href="#">Contact Me</a>
+              <a href="#contactMe">Contact Me</a>
             </li>
           </ol>
         </div>
